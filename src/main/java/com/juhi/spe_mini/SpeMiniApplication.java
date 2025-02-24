@@ -21,8 +21,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import java.util.Scanner;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 //public class SpeMiniApplication implements CommandLineRunner {
+
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class SpeMiniApplication {
 
     public static void main(String[] args) {
@@ -47,9 +48,34 @@ public class SpeMiniApplication {
                 break;
             }
 
-            // Perform selected operation...
+            System.out.print("Enter value x: ");
+            double x = scanner.nextDouble();
+
+            switch (choice) {
+                case 1 -> System.out.println("√" + x + " = " + Math.sqrt(x));
+                case 2 -> System.out.println(x + "! = " + factorial((int) x));
+                case 3 -> System.out.println("ln(" + x + ") = " + Math.log(x));
+                case 4 -> {
+                    System.out.print("Enter value b: ");
+                    double b = scanner.nextDouble();
+                    System.out.println(x + "^" + b + " = " + Math.pow(x, b));
+                }
+                default -> System.out.println("Invalid choice! Try again.");
+            }
         }
+        scanner.close();
     }
+
+    private static long factorial(int num) {
+        if (num == 0 || num == 1) return 1;
+        long result = 1;
+        for (int i = 2; i <= num; i++) {
+            result *= i;
+        }
+        return result;
+    }
+}
+
 
 //    public static void main(String[] args) {
 //        SpringApplication.run(SpeMiniApplication.class, args);
@@ -101,5 +127,5 @@ public class SpeMiniApplication {
 //        }
 //        return result;
 //    }
-}
+//}
 
