@@ -25,6 +25,12 @@ pipeline {
             }
         }
 
+        stage('Build JAR') {
+                    steps {
+                        sh './mvnw clean package'  // Builds the JAR file inside 'target' directory
+                    }
+                }
+
         stage('Build Docker Image') {
             steps {
                 sh '''
