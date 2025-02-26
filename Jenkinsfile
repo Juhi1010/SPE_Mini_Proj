@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-repo-url.git' // Replace with your repo
+                git 'https://github.com/Juhi1010/SPE_Mini_Proj' // Replace with your repo
             }
         }
 
