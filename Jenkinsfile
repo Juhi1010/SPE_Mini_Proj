@@ -57,9 +57,20 @@ pipeline {
             }
         }
 
+//         stage('Deploy with Ansible') {
+//             steps {
+//                 sh '''
+//                 cd ansible
+//                 ansible-playbook -i inventory deploy.yml
+//                 '''
+//             }
+//         }
+//
         stage('Deploy with Ansible') {
             steps {
                 sh '''
+                docker stop spe-mini-cli || true
+                docker rm spe-mini-cli || true
                 cd ansible
                 ansible-playbook -i inventory deploy.yml
                 '''
