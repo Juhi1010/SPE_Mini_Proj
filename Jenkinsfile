@@ -3,19 +3,19 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_USER = 'juhir10'   // Your Docker Hub username
-        DOCKER_IMAGE = 'spe-mini'     // Docker image name
+        DOCKER_HUB_USER = 'juhir10'   // Docker Hub username
+        DOCKER_IMAGE = 'spe-mini'     // Image name
         DOCKER_TAG = 'latest'         // Image tag
     }
 
     triggers {
-        githubPush()  // Enables GitHub Webhook Trigger
+        githubPush()
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Juhi1010/SPE_Mini_Proj.git' // Replace with your repo
+                git branch: 'main', url: 'https://github.com/Juhi1010/SPE_Mini_Proj.git'
             }
         }
 
@@ -57,15 +57,6 @@ pipeline {
             }
         }
 
-//         stage('Deploy with Ansible') {
-//             steps {
-//                 sh '''
-//                 cd ansible
-//                 ansible-playbook -i inventory deploy.yml
-//                 '''
-//             }
-//         }
-//
         stage('Deploy with Ansible') {
             steps {
                 sh '''
@@ -76,17 +67,6 @@ pipeline {
                 '''
             }
         }
-
-//         stage('Deploy Container') {
-//             steps {
-//                 sh '''
-//                 docker stop spe-mini-container || true
-//                 docker rm spe-mini-container || true
-//                 docker run -d --name spe-mini-container $DOCKER_HUB_USER/$DOCKER_IMAGE:$DOCKER_TAG
-//                 '''
-//             }
-//         }
-    }
 
     post {
         always {
