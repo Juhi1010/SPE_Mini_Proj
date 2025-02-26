@@ -72,7 +72,7 @@ pipeline {
                 docker stop spe-mini-cli || true
                 docker rm spe-mini-cli || true
                 cd ansible
-                ansible-playbook -i inventory deploy.yml
+                ansible-playbook -i hosts.ini deploy.yml
                 '''
             }
         }
