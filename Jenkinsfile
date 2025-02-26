@@ -58,12 +58,13 @@ pipeline {
         }
 
         stage('Deploy with Ansible') {
-                    steps {
-                        sh '''
-                        ansible-playbook -i ansible/deploy.yml
-                        '''
-                    }
-               }
+            steps {
+                sh '''
+                cd ansible
+                ansible-playbook -i inventory deploy.yml
+                '''
+            }
+        }
 
 //         stage('Deploy Container') {
 //             steps {
