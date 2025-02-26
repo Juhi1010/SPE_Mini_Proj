@@ -57,15 +57,23 @@ pipeline {
             }
         }
 
-        stage('Deploy Container') {
-            steps {
-                sh '''
-                docker stop spe-mini-container || true
-                docker rm spe-mini-container || true
-                docker run -d --name spe-mini-container $DOCKER_HUB_USER/$DOCKER_IMAGE:$DOCKER_TAG
-                '''
-            }
-        }
+        stage('Deploy with Ansible') {
+                    steps {
+                        sh '''
+                        ansible-playbook -i ansible/deploy.yml
+                        '''
+                    }
+               }
+
+//         stage('Deploy Container') {
+//             steps {
+//                 sh '''
+//                 docker stop spe-mini-container || true
+//                 docker rm spe-mini-container || true
+//                 docker run -d --name spe-mini-container $DOCKER_HUB_USER/$DOCKER_IMAGE:$DOCKER_TAG
+//                 '''
+//             }
+//         }
     }
 
     post {
