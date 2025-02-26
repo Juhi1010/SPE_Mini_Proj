@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_USER = 'juhir10'   // Docker Hub username
+        DOCKER_HUB_USER = 'juhir10'
         DOCKER_IMAGE = 'spe-mini'     // Image name
         DOCKER_TAG = 'latest'         // Image tag
     }
