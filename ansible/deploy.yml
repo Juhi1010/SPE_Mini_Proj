@@ -1,0 +1,20 @@
+- name: Deploy CLI Scientific Calculator Locally
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Remove existing container if present
+      ansible.builtin.shell: |
+        docker ps -a | grep spe-mini-cli && docker rm -f spe-mini-cli || true
+      args:
+        executable: /bin/bash
+
+    - name: Pull the latest Docker image
+      ansible.builtin.shell: docker pull juhir10/spe-mini:latest
+      args:
+        executable: /bin/bash
+
+    - name: Run the container in detached mode
+      ansible.builtin.shell: docker run -d --name spe-mini-cli juhir10/spe-mini:latest sleep infinity
+      args:
+        executable: /bin/bash
