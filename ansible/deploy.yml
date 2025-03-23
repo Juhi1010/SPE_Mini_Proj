@@ -20,7 +20,3 @@
       args:
         executable: /bin/bash
 
-    - name: Display container status
-      ansible.builtin.debug:
-        msg: "Container is running successfully!"
-      when: container_status.rc == 0
