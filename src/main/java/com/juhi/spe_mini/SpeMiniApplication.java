@@ -29,7 +29,7 @@ public class SpeMiniApplication {
                 break;
             }
 
-            System.out.print("Enter value x: ");
+            System.out.print("Enter value of x: ");
             double x = scanner.nextDouble();
 
             switch (choice) {
