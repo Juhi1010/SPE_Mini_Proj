@@ -19,3 +19,8 @@
       ansible.builtin.shell: docker run -d --name spe-mini-cli juhir10/spe-mini:latest tail -f /dev/null
       args:
         executable: /bin/bash
+
+    - name: Display container status
+      ansible.builtin.debug:
+        msg: "Container is running successfully!"
+      when: container_status.rc == 0
