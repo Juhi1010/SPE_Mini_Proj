@@ -10,4 +10,4 @@ COPY target/*.jar app.jar
 # Set the entry point to execute the JAR file
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
-#CMD ["sh", "-c", "while true; do sleep 3600; done"]
+CMD ["sh", "-c", "while true; do sleep 3600; done"]
