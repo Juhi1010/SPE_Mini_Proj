@@ -16,7 +16,7 @@
 
     - name: Run the container in detached mode
 #      ansible.builtin.shell: docker run -d --name spe-mini-cli juhir10/spe-mini:latest sleep infinity
-      ansible.builtin.shell: docker run -d --name spe-mini-cli juhir10/spe-mini:latest tail -f /dev/null
+      ansible.builtin.shell: docker run -dit --name spe-mini-cli juhir10/spe-mini:latest sh
       args:
         executable: /bin/bash
 
