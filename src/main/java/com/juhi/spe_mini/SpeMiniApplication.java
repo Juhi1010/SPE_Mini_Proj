@@ -22,6 +22,7 @@ public class SpeMiniApplication {
             System.out.println("3. Natural Logarithm (ln(x))");
             System.out.println("4. Power Function (x^b)");
             System.out.println("5. Exit");
+            System.out.flush();
 
             int choice = scanner.nextInt();
             if (choice == 5) {
