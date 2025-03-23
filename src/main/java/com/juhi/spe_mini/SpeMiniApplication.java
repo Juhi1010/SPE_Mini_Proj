@@ -19,7 +19,7 @@ public class SpeMiniApplication {
             System.out.println("Select an operation:");
             System.out.println("1. Square Root (√x)");
             System.out.println("2. Factorial (x!)");
-            System.out.println("3. Natural Log (ln(x))");
+            System.out.println("3. Natural Logarithm (ln(x))");
             System.out.println("4. Power Function (x^b)");
             System.out.println("5. Exit");
 
@@ -29,7 +29,7 @@ public class SpeMiniApplication {
                 break;
             }
 
-            System.out.print("Enter value for x: ");
+            System.out.print("Enter value x: ");
             double x = scanner.nextDouble();
 
             switch (choice) {
