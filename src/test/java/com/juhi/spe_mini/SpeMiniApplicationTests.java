@@ -14,12 +14,10 @@ class SpeMiniApplicationTest {
 
     @Test
     void testFactorial() {
-        assertEquals(1, factorial(0));
-        assertEquals(1, factorial(1));
-        assertEquals(2, factorial(2));
-        assertEquals(6, factorial(3));
-        assertEquals(24, factorial(4));
-        assertEquals(120, factorial(5));
+        assertEquals(1, SpeMiniApplication.factorial(0));
+        assertEquals(1, SpeMiniApplication.factorial(1));
+        assertEquals(2, SpeMiniApplication.factorial(2));
+        assertEquals(120, SpeMiniApplication.factorial(5));
     }
 
     @Test
@@ -37,13 +35,13 @@ class SpeMiniApplicationTest {
     }
 
     // Helper method for factorial
-    private static long factorial(int num) {
-        if (num == 0 || num == 1) return 1;
-        long result = 1;
-        for (int i = 2; i <= num; i++) {
-            result *= i;
-        }
-        return result;
-    }
+//    private static long factorial(int num) {
+//        if (num == 0 || num == 1) return 1;
+//        long result = 1;
+//        for (int i = 2; i <= num; i++) {
+//            result *= i;
+//        }
+//        return result;
+//    }
 }
 

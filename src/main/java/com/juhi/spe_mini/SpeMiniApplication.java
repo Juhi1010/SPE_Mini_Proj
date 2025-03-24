@@ -48,7 +48,7 @@ public class SpeMiniApplication {
         scanner.close();
     }
 
-    private static long factorial(int num) {
+    public static long factorial(int num) {
         if (num == 0 || num == 1) return 1;
         long result = 1;
         for (int i = 2; i <= num; i++) {
