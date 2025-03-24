@@ -31,6 +31,7 @@ public class SpeMiniApplication {
             }
 
             System.out.print("Enter value of x: ");
+            System.out.print("This is test statement");
             double x = scanner.nextDouble();
 
             switch (choice) {
