@@ -42,7 +42,7 @@ public class SpeMiniApplication {
                     double b = scanner.nextDouble();
                     System.out.println(x + "^" + b + " = " + Math.pow(x, b));
                 }
-                default -> System.out.println("Invalid choice! Try again.");
+                default -> System.out.println("Invalid choice..Try again.");
             }
         }
         scanner.close();
